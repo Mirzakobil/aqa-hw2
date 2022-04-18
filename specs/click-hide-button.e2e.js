@@ -5,6 +5,12 @@ describe('Check app', function () {
     await $('#login').setValue('walker@jw.com');
     await $('#password').setValue('password');
     await $('button').click();
+
+    it('should check spinner', async function () {
+      const spinnerHidden = await $('#spinner').waitForDisplayed({
+        reverse: false,
+      });
+    });
     // method 1
     await browser.execute(
       'document.getElementsByClassName(arguments[0])[0].remove()',
