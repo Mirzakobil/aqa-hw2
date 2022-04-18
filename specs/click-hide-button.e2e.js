@@ -21,5 +21,6 @@ describe('Check app', function () {
     // await browser.execute(
     //   'document.getElementsByClassName("btn-danger")[0].click()'
     // );
+    await browser.acceptAlert();
   });
 });
