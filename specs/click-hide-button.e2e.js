@@ -11,7 +11,6 @@ describe('Check app', function () {
         reverse: false,
       });
     });
-    // method 1
     await browser.execute(
       'document.getElementsByClassName(arguments[0])[0].remove()',
       'sticky-top'
