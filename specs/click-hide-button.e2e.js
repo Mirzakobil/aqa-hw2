@@ -7,7 +7,7 @@ describe('Check app', function () {
     await $('button').click();
 
     it('should check spinner', async function () {
-      const spinnerHidden = await $('#spinner').waitForDisplayed({
+      await $('#spinner').waitForDisplayed({
         reverse: false,
       });
     });
@@ -17,16 +17,8 @@ describe('Check app', function () {
       'sticky-top'
     );
     await browser.execute(
-      'document.getElementsByClassName(arguments[0])[0].click()',
-      'btn-danger'
+      'document.getElementsByClassName("btn-danger")[0].click()'
     );
-    // method 2
-    // await browser.execute(
-    //   'document.getElementsByClassName("sticky-top")[0].remove()'
-    // );
-    // await browser.execute(
-    //   'document.getElementsByClassName("btn-danger")[0].click()'
-    // );
     await browser.acceptAlert();
   });
 });
